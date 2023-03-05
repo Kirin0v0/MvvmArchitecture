@@ -40,7 +40,7 @@
 
 以下为**MVVM架构库架构分层**：
 
-![MVVM架构图](https://gitee.com/soulkun/typora_images/blob/master/images/MVVM架构图.png)
+![MVVM](https://raw.githubusercontent.com/soulkun926/typora-images/main/images/MVVM.png)
 
 1. **UI**：
 
@@ -56,7 +56,7 @@
 
    * 常用数据结构类
 * `MvvmState`类：观察者模式的数据类，其拥有是否防抖动功能，防抖动可防止重复数据通知View。注意，**在初始化时必须传入非空值**。
-   
+  
    * `LiveData`及其子类：观察者模式的数据类，MVVM依赖库封装的子类赋予其是否粘性监听以及是否支持空值传入的功能，并根据业务提供了更多的功能。
 
      > `LiveData类`与`MvvmState`类本质区别：`LiveData`类可在容器中与生命周期结合，例如，DataBinding可在生命周期有效时监听其数据变化，生命周期销毁后是不会将变化传递给DataBinding的，而`MvvmState`没有生命周期的概念，更加轻量化
@@ -208,7 +208,7 @@
 
 
       * 绑定事件：(数据类为逻辑数据类)
-
+    
         ​	使用Lambda表达式以及双冒号将DataBinding方法的参数转变为传入数据类的方法参数，隔离了容器和控件的接触，保证了控件生命周期的一致性。
 
 3. 在UI容器类中创建对应数据类，并执行需要的逻辑，**注意，逻辑数据类必须以该UI容器类的类名为前缀**；
@@ -223,7 +223,7 @@
 
 4. 最后，在`getDataBindingFactory()`方法中必须使用`MvvmDataBindingFactory`工厂类的相关方法传入参数，创建并返回对象；
 
-![image-20221122170234205](https://gitee.com/soulkun/typora_images/raw/master/images/image-20221122170234205.png)
+   ![image-20221122170234205](https://gitee.com/soulkun/typora_images/raw/master/images/image-20221122170234205.png)
 
 ​		注意，**VM中的LiveData数据类监听需要调用`viewDataBinding.setLifecycleOwner(lifecycleOwner)`方法**，若自定义ViewDataBinding出现LiveData数据改变但DataBinding不发生变化务必检查该项！
 
@@ -328,7 +328,7 @@
   > * `getGraphViewModel`方法：获取作用域为**Graph**的ViewModel。
   > * `getApplicationViewModel`方法：获取作用域为**Application**的ViewModel。
   > * `getViewModel`方法：获取作用域为**指定作用域**的ViewModel。
-  
+
 * 消息总线：
 
   ​	消息总线指的是**在不同页面中通过总线发送和订阅消息，可以降低代码耦合度**。在该业务场景中，可以使用MessageViewModel的设计思路（详细见MVVM架构库的架构分层），创建继承于`MvvmAbstractMessageViewModel`的MessageViewModel类，并在其中重写鉴权方法，目的是防止调用者发送不符合开发者要求的异常消息，此外，还可以自定义消息队列长度以及消息清空时间，防止消息数据在发送后一直存在于内存，达到内存裁剪的效果。在创建VM类后获取**作用域唯一**的VM实例，即可对其发送或订阅消息，达到消息总线的目的。
