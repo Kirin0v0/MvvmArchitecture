@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 加载更多 -->
+    <string name="mvvm_recycler_view_load_more_text_loading">正在加载中...</string>
+    <string name="mvvm_recycler_view_load_more_text_complete">加载完成</string>
+    <string name="mvvm_recycler_view_load_more_text_end">暂无更多数据</string>
+    <string name="mvvm_recycler_view_load_more_text_fail">加载失败</string>
+</resources>

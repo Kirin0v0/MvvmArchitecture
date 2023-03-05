@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- LeftNavigationView的自定义参数  -->
+    <dimen name="mvvm_left_navigation_active_item_max_height">58dp</dimen>
+    <dimen name="mvvm_left_navigation_active_item_min_height">48dp</dimen>
+    <dimen name="mvvm_left_navigation_item_max_height">50dp</dimen>
+    <dimen name="mvvm_left_navigation_item_min_height">40dp</dimen>
+    <dimen name="mvvm_left_navigation_width">58dp</dimen>
+
+</resources>

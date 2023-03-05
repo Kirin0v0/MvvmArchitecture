@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="MvvmLeftNavigationView">
+        <attr name="itemVerticalTranslationEnabled" format="boolean" tools:ignore="ResourceName" />
+    </declare-styleable>
+
+    <style name="Widget.Mvvm.MvvmLeftNavigationView" parent="" tools:ignore="ResourceName">
+        <item name="elevation">@dimen/design_bottom_navigation_elevation</item>
+        <item name="enforceTextAppearance">false</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="itemBackground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="itemVerticalTranslationEnabled">true</item>
+        <item name="itemIconSize">@dimen/design_bottom_navigation_icon_size</item>
+        <item name="labelVisibilityMode">auto</item>
+    </style>
+
+    <style name="Widget.Mvvm.MvvmLeftNavigationView.Colored" parent="Widget.Mvvm.MvvmLeftNavigationView" tools:ignore="ResourceName">
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">true</item>
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="itemBackground">@null</item>
+        <item name="itemVerticalTranslationEnabled">false</item>
+        <item name="itemIconTint">@color/mtrl_navigation_bar_item_tint</item>
+        <item name="itemTextAppearanceInactive">?attr/textAppearanceCaption</item>
+        <item name="itemTextAppearanceActive">?attr/textAppearanceCaption</item>
+        <item name="itemTextColor">@color/mtrl_navigation_bar_item_tint</item>
+        <item name="itemRippleColor">@color/mtrl_navigation_bar_ripple_color</item>
+    </style>
+
+</resources>
