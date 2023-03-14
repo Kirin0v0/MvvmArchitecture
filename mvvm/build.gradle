@@ -60,16 +60,16 @@ dependencies {
 
 }
 
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            // Creates a Maven publication called "release".
-//            release(MavenPublication) {
-//                from components.release
-//                groupId = 'com.github.soulkun926'
-//                artifactId = 'MvvmArchitecture'
-//                version = '1.0.0'
-//            }
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.soulkun926'
+                artifactId = 'MvvmArchitecture'
+                version = 'v1.0.0'
+            }
+        }
+    }
+}
