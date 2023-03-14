@@ -1,7 +1,6 @@
 # MVVM架构指南
 
 > 参考自：
->
 > [言简意赅 Android 架构设计与挑选]: https://xiaozhuanlan.com/topic/4620985173
 
 
